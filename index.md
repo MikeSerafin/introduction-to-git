@@ -14,5 +14,5 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "your@email"
 ```
 This user name and email will be recorded with each commit in the history of your repositories. The email address should be the same one you used when setting up your GitHub account.
-You may want to change the default editor to something more familiar by using the    core.editor config.
+You may want to change the default editor to something more familiar by using the `core.editor` config.
 
