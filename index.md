@@ -205,6 +205,8 @@ You can therefor choose to copy these and paste them on the command line. Or you
 
 ```bash
 $ git remote add origin https://github.com/MikeSerafin/hello-world.git
+git branch -M main
+git push -u origin main
 ```
 where `MikeSerafin` should be replaced with your own username.
 
@@ -219,3 +221,5 @@ $ git remote -v
 origin  https://github.com/<your_github_username>/hello-world (fetch)
 origin  https://github.com/<your_github_username>/hello-world (push)
 ```
+
+
