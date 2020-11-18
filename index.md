@@ -318,6 +318,41 @@ To https://github.com/<your_github_username>/hello-world
 ```
 And let's check on GitHub that we now have 2 commits there.
 
+### Pulling changes
 
+When working with others, or when we’re making our own changes from different machines, we need a way of pulling those remote changes back into our local copy. For now, we can see how this works by making a change on the GitHub website and then ‘pulling’ that change back to our computer.
+
+Let’s go to our repository in GitHub and make a change. Underneath where our index.md file is listed you will see a button to ‘Add a README’. Do this now, entering whatever you like, scrolling to the bottom and clicking ‘Commit new file’ (The default commit message will be ‘Create README.md’, which is fine for our purposes).
+
+> **The README file** <br />
+> It is good practice to add a README file to each project to give a brief overview of what the project is about. If you put your README file in your repository’s root directory, GitHub will recognize and automatically surface your README to repository visitors
+
+Our local repository is now out of sync with our remote repository, so let’s fix that by pulling the remote changes into our local repository using the `git pull` command.
+
+```bash
+$ git pull
+```
+```console
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/<your_github_username>/hello-world
+   8e2eb99..0f5a7b0  master     -> origin/master
+Updating 8e2eb99..0f5a7b0
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
+The above output shows that we have fast-forwarded our local repository to include the file README.md. We could confirm this by entering the `ls` command.
+
+When we begin collaborating on more complex projects, we may have to consider more aspects of git functionality, but this should be a good start. In the next section, we can look more closely at collaborating and using GitHub pages to create a website for our project.
+
+
+***
+
+Licensed under CC-BY 4.0
 
 
