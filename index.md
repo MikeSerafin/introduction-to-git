@@ -9,7 +9,7 @@ You will not be an expert by the end of the class. You will probably not even fe
 
 ## Setup
 1. Create a free [GitHub](https://github.com/join) account and confirm your email.
-2. Download and install Git for your operating system: https://git-scm.com/downloads (Note: Git for Windows comes bundled with the Git BASH terminal that allows you to use UNIX-style commands on Windows)
+2. Download and install Git for your operating system: [https://git-scm.com/downloads](https://git-scm.com/downloads) (Note: Git for Windows comes bundled with the Git BASH terminal that allows you to use UNIX-style commands on Windows)
 3. Configure Git by opening a terminal and entering the following commands:
 ```bash
 $ git config --global user.name "Your Name"
@@ -161,3 +161,23 @@ Having made a commit, we now have a permanent record of what was changed, along 
 If you think of Git as taking snapshots of changes over the life of a project, `git add` specifies *what* will go in a snapshot (putting things in the staging area), and git commit then actually takes the snapshot, and makes a permanent record of it (as a commit). If you don’t have anything staged when you type `git commit`, Git will prompt you to use `git commit -a` or `git commit --all`, which is kind of like gathering *everyone* for the picture! However, it’s almost always better to explicitly add things to the staging area, because you might commit changes you forgot you made. (Going back to snapshots, you might get the extra with incomplete makeup walking on the stage for the snapshot because you used `-a`!) Try to stage things manually, or you might find yourself searching for "git undo commit" more than you would like!
 
 ![Staging image](git-staging-area.svg)
+
+At the moment, our changes are only recorded locally, on our computer. If we wanted to work collaboratively with someone else they would have no way of seeing what we’ve done. We will fix that in the next episode by using GitHub to share our work.
+
+### Key points for this section
+* Git repositories contain metadata about files under version control.
+* This metadata enables us to track changes to files over time.
+* Git uses a two-stage commit process.  Changes to files must first be added to the stating area, then committed to the repository.
+
+## Sharing your work
+
+### Create a repository on GitHub
+When we have logged in to GitHub, we can create a new repository by clicking the **+** icon in the upper-right corner of any page, then selecting **New repository**.  Let's do this now.
+* Create a new repository
+* Give it the name `hello-world`
+GitHub will ask if you want to add a `README.md`, license or a `.gitignore` file. Do not do any of that for now.
+
+#### Choosing a license
+Choosing a license is an important part of openly sharing your creative work online. For help in wading through the many types of open source licenses, please visit [https://choosealicense.com/](https://choosealicense.com).
+
+## Connecting your local repository to the GitHub repository
