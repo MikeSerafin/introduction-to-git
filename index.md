@@ -348,7 +348,7 @@ Fast-forward
 
 The above output shows that we have fast-forwarded our local repository to include the file README.md. We could confirm this by entering the `ls` command.
 
-When we begin collaborating on more complex projects, we may have to consider more aspects of git functionality, but this should be a good start. In the next section, we can look more closely at collaborating and using GitHub pages to create a website for our project.
+When we begin collaborating on more complex projects, we may have to consider more aspects of git functionality, but this should be a good start. 
 
 
 ***
