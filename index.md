@@ -205,8 +205,8 @@ You can therefor choose to copy these and paste them on the command line. Or you
 
 ```bash
 $ git remote add origin https://github.com/MikeSerafin/hello-world.git
-git branch -M main
-git push -u origin main
+$ git branch -M main
+$ git push -u origin main
 ```
 where `MikeSerafin` should be replaced with your own username.
 
@@ -221,5 +221,85 @@ $ git remote -v
 origin  https://github.com/<your_github_username>/hello-world (fetch)
 origin  https://github.com/<your_github_username>/hello-world (push)
 ```
+
+### Pushing changes
+
+Now we have established a connection between the two repositories and we have synchronized the content when we ran `git push -u origin main` above.
+
+The nickname of our remote repository is "origin" and the default local branch name is "main" (or "master"). The -u flag tells git to remember the parameters, so that next time we can simply run `git push` and Git will know what to do.
+
+Pushing our local changes to the Github repository is sometimes referred to as "pushing changes `upstream` to Github". The word `upstream` here comes from the git flag we used earlier in the command `git push -u origin master`. The flag `-u` refers to `-set-upstream`, so when we say pushing changes upstream, it refers to the remote repository.
+
+You may be prompted to enter your GitHub username and password to complete the command.
+
+When we do a `git push`, we will see Git 'pushing' changes upstream to GitHub. Because our file is very small, this won’t take long but if we had made a lot of changes or were adding a very large repository, we might have to wait a little longer. We can check where we’re at with `git status`.
+
+```bash
+$ git status
+```
+```console
+On branch main
+Your branch is up-to-date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+This output lets us know where we are working (the main branch). We can also see that we have no changes to commit and everything is in order.
+
+We can use the `git diff` command to see changes we have made before making a commit. Open `index.md` with any text editor and enter some text on a new line, for instance "A new line" or something else. We will then use `git diff` to see the changes we made:
+
+```bash
+$ git diff
+```
+```console
+diff --git a/index.md b/index.md
+index aed0629..989787e 100644
+--- a/index.md
++++ b/index.md
+@@ -1 +1,2 @@
+-# Hello, world!
+\ No newline at end of file
++# Hello, world!
++A new line
+```
+
+The command produces lots of information and it can be a bit overwhelming at first, but let’s go through some key information here:
+
+1. The first line tells us that Git is producing output similar to the Unix `diff` command, comparing the old and new versions of the file.
+2. The second line tells exactly which versions of the file Git is comparing; `aed0629` and `989787e` are unique computer-generated identifiers for those versions.
+3. The third and fourth lines once again show the name of the file being changed.
+4. The remaining lines are the most interesting; they show us the actual differences and the lines on which they occur. In particular, the + markers in the first column show where we have added lines.
+
+We can now commit these changes:
+```bash
+$ git add index.md
+$ git commit -m "Add another line"
+```
+
+If we are very forgetful and have already forgotten what we changes we have made, `git log` allows us to look at what we have been doing with our git repository (in reverse chronological order, with the very latest changes first).
+```bash
+$ git log
+```
+```console
+commit 8e2eb9920eaa0bf18a4adfa12474ad58b765fd06
+Author: Your Name <your_email>
+Date:   Mon Jun 5 12:41:45 2017 +0100
+
+    Add another line
+
+commit e9e8fd3f12b64fc3cbe8533e321ef2cdb1f4ed39
+Author: Your Name <your_email>
+Date:   Fri Jun 2 18:15:43 2017 +0100
+
+    Add index.md
+```
+This shows us the two commits we have made and shows the messages we wrote. It is important to try to use meaningful commit messages when we make changes. This is especially important when we are working with other people who might not be able to guess as easily what our short cryptic messages might mean. Note that it is best practice to always write commit messages in the imperative (e.g. ‘Add index.md’, rather than ‘Adding index.md’).
+
+### Pushing changes (again)
+Now, let’s have a look at the repository at GitHub again (that is, `https://github.com/some-librarian/hello-world` with `some-librarian` replaced with your username). We see that the `index.md` file is there, but there is only one commit:
+![Commit image](github-one-commit.png)
+
+
+
+
 
 
