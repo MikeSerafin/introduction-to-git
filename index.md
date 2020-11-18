@@ -298,8 +298,25 @@ This shows us the two commits we have made and shows the messages we wrote. It i
 Now, let’s have a look at the repository at GitHub again (that is, `https://github.com/some-librarian/hello-world` with `some-librarian` replaced with your username). We see that the `index.md` file is there, but there is only one commit:
 ![Commit image](github-one-commit.png)
 
+And if you click on `index.md` you will see that it contains the “Hello, world!” header, but not the new line we just added.
 
+This is because we haven’t yet pushed our local changes to the remote repository. This might seem like a mistake in design but it is often useful to make a lot of commits for small changes so you are able to make careful revisions later and you don’t necessarily want to push all these changes one by one.
 
+Another benefit of this design is that you can make commits without being connected to internet.
+
+But let’s push our changes now, using the `git push` command:
+
+```bash
+$ git push
+```
+```console
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 272 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/<your_github_username>/hello-world
+   e9e8fd3..8e2eb99  main -> main
+```
+And let's check on GitHub that we now have 2 commits there.
 
 
 
