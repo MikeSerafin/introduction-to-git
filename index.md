@@ -180,4 +180,23 @@ GitHub will ask if you want to add a `README.md`, license or a `.gitignore` file
 #### Choosing a license
 Choosing a license is an important part of openly sharing your creative work online. For help in wading through the many types of open source licenses, please visit [https://choosealicense.com/](https://choosealicense.com).
 
-## Connecting your local repository to the GitHub repository
+### Connecting your local repository to the GitHub repository
+
+In the previous episode we created a local repository on our own computer. Now we have also created a remote repository on GitHub. But at this point, the two are completely isolated from each other. We want to link them together to synchronize them and share our project with the world.
+
+To do this, we need the GitHub repository URL, which should look something like this (with “some-librarian” replaced with your username):
+
+![GitHub setup image](repository-url.png)
+
+If the URL starts with `git@` rather than `https://`, please click the “HTTPS” button to change it.
+
+> HTTPS vs SSH
+> We use HTTPS here because it does not require additional configuration, which vary from operating system to operating system. If you start using Git regularly, you would like to set up SSH access, which is a bit more secure and convenient, by following one of the great tutorials from [GitHub](https://help.github.com/articles/generating-ssh-keys), [Atlassian/BitBucket](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/) (this one has a screencast).
+
+Notice that GitHub is actually helpful enough to provide instructions for us so we don't have to remember these commands:
+
+![GitHub help](githubhelp.png)
+
+
+
+
