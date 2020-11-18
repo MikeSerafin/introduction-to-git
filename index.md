@@ -190,13 +190,15 @@ To do this, we need the GitHub repository URL, which should look something like 
 
 If the URL starts with `git@` rather than `https://`, please click the “HTTPS” button to change it.
 
-> HTTPS vs SSH
+> **HTTPS vs SSH** <br />
 > We use HTTPS here because it does not require additional configuration, which vary from operating system to operating system. If you start using Git regularly, you would like to set up SSH access, which is a bit more secure and convenient, by following one of the great tutorials from [GitHub](https://help.github.com/articles/generating-ssh-keys), [Atlassian/BitBucket](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/) (this one has a screencast).
 
 Notice that GitHub is actually helpful enough to provide instructions for us so we don't have to remember these commands:
 
 ![GitHub help](githubhelp.png)
 
+Again, note that the name of the branch is 'main' on GitHub. Previously, this was called 'master' if you come across that branch in other tutorials.
 
+In the above image, instead of 'MikeSerafin', you will see your own username.
 
 
