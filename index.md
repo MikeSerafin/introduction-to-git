@@ -56,3 +56,105 @@ Initialized empty Git repository in <your file path>/hello-world/.git/
 The `hello-world` directory is now a git repository.
 If we run the `ls` command now (`ls` lists the content of the `hello-world` directory), the repository might seem empty; however adding the `-a` flag for all files via `ls -a` will show all hidden files, which in this case includes the new hidden directory `.git`. Flags can simply be thought of as command options that can be added to shell commands.
 Note that whenever we use git via the command line, we need to preface each command (or verb) with `git`, so that the computer knows we are trying to get git to do something, rather than some other program.
+
+### Displaying the current project's status
+We can run the `git status` command to display the current state of a project. Let's do that now.
+
+```bash
+$ git status
+```
+
+```console
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+```
+*Note*: Some versions of Git have named the default branch as "main" and not "master".
+The output tells us that we are on the master branch (more on this later) and that we have nothing to commit (no unsaved changes).
+
+### Adding and committing
+We will now create and save our firsst project file. This is a two-stage process. First, we *add* any files for which we want to save the changes to a staging area, then we *commit* those changes to the repository. This two-stage process gives us fine-grained control over what should and should not be included in a particular commit.
+Let's create a new file using the `touch` command, which is a quick way to create an empty file.
+
+```bash
+$ touch index.md
+```
+The `.md` extension above signifies that we have chosen to use the Markdown format, a lightweight markup language with plain text formatting syntax. We will explore Markdown a bit later.
+Let's check the status of our project again.
+
+```bash
+$ git status
+```
+
+```console
+On branch master
+No commits yet
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    index.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+This status is telling us that Git has noticed a new file in our directory that we are not yet tracking. With colourized output, the filename will appear in red. To change this, and to tell Git we want to track any changes we make to `index.md`, we use `git add`.
+
+```bash
+$ git add index.md
+```
+This adds our Markdown file to the *staging area* (the area where Git checks for file changes). To confirm this we want to use `git status` again.
+
+```bash
+$ git status
+```
+```console
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+    new file:   index.md
+```
+If we are using colourised output, we will see that the filename has changed colour (from red to green). Git also tells us that there is a new file to be committed but, before we do that, let’s add some text to the file.
+We will open the file `index.md` with any text editor we have at hand (e.g. Notepad on Windows or TextEdit on Mac OSX) and enter `# Hello, world!`. The hash character is one way of writing a header with Markdown. Now, let’s save the file within the text editor and check if Git has spotted the changes.
+
+```bash
+$ git status
+```
+```console
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   index.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.md
+```
+This lets us know that git has indeed spotted the changes to our file, but that it hasn't yet staged them, so let's add the new version of the file to the staging area.
+
+```bash
+$ git add index.md
+```
+Now we are ready to *commit* our first changes. Commit is similar to ‘saving’ a file to Git. However, compared to saving, a commit provides a lot more information about the changes we have made, and this information will remain visible to us later.
+
+```bash
+$ git commit -m 'Add index.md'
+```
+```console
+[master (root-commit) e9e8fd3] Add index.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.md
+```
+We can see that one file has changed and that we made one insertion, which was a line with the text '#Hello, world!'. We can also see the commit message 'Add index.md', which we added by using the `-m` flag after `git commit`. The commit message is used to record a short, descriptive, and specific summary of what we did to help us remember later on without having to look at the actual changes. If we just run `git commit` without the `-m` option, Git will launch nano (or whatever other editor we configured as `core.editor`) so that we can write a longer message.
+
+Having made a commit, we now have a permanent record of what was changed, along with metadata about who made the commit and at what time.
+
+
