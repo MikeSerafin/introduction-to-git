@@ -42,6 +42,8 @@ First, we will create a new directory for our project and enter that directory.
 
 ```bash
 $ mkdir hello-world
-$cd hello-world
+$ cd hello-world
 ```
+We will now create an empty git reposityro to track changes to our project.  To do this we will use the git **init** command, which is simply short for *initialize*.
+
 
