@@ -353,8 +353,10 @@ When we begin collaborating on more complex projects, we may have to consider mo
 ## More resources
 
 [Free Git book](https://git-scm.com/book/en/v2)
+
 [Git cheat sheet](https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/
 )
+
 [Online Git tutorial](https://learngitbranching.js.org/)
 
 
