@@ -350,6 +350,13 @@ The above output shows that we have fast-forwarded our local repository to inclu
 
 When we begin collaborating on more complex projects, we may have to consider more aspects of git functionality, but this should be a good start. 
 
+## More resources
+
+[Free Git book](https://git-scm.com/book/en/v2)
+[Git cheat sheet](https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/
+)
+[Online Git tutorial](https://learngitbranching.js.org/)
+
 
 ***
 
