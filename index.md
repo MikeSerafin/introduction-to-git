@@ -28,3 +28,7 @@ Finally, to check that your configuration changes have been made, use:
 $ git config --list
 ```
 
+## Getting started with git
+
+### Using Git
+
