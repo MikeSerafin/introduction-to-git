@@ -201,4 +201,21 @@ Again, note that the name of the branch is 'main' on GitHub. Previously, this wa
 
 In the above image, instead of 'MikeSerafin', you will see your own username.
 
+You can therefor choose to copy these and paste them on the command line. Or you can choose to type them out to get them into your fingers. I will do that. So we start with the command to link our local repository to the GitHub repository:
 
+```bash
+$ git remote add origin https://github.com/MikeSerafin/hello-world.git
+```
+where `MikeSerafin` should be replaced with your own username.
+
+> **Why origin?** <br />
+> `origin` in the `git remote add` line is just a short name or alias we’re giving to that big long repository URL. It could be almost any string we want, but by convention in git, it is usually called `origin`, representing where the repo originated.
+
+We can check that it is set up correctly with the command:
+```bash
+$ git remote -v
+```
+```console
+origin  https://github.com/<your_github_username>/hello-world (fetch)
+origin  https://github.com/<your_github_username>/hello-world (push)
+```
