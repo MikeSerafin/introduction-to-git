@@ -73,7 +73,7 @@ nothing to commit (create/copy files and use "git add" to track)
 The output tells us that we are on the master branch (more on this later) and that we have nothing to commit (no unsaved changes).
 
 ### Adding and committing
-We will now create and save our firsst project file. This is a two-stage process. First, we **add** any files for which we want to save the changes to a staging area, then we **commit** those changes to the repository. This two-stage process gives us fine-grained control over what should and should not be included in a particular commit.
+We will now create and save our first project file. This is a two-stage process. First, we **add** any files for which we want to save the changes to a staging area, then we **commit** those changes to the repository. This two-stage process gives us fine-grained control over what should and should not be included in a particular commit.
 Let's create a new file using the `touch` command, which is a quick way to create an empty file.
 
 ```bash
